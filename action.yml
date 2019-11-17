@@ -1,0 +1,13 @@
+name: Setup Erlang
+description: Install Erlang/OTP
+author: Louis Pilfold <louis@lpil.uk>
+branding:
+  color: purple
+  icon: box
+inputs:
+  otp-version:
+    description: Version of OTP to install
+    required: true
+runs:
+  using: node12
+  main: main.js
