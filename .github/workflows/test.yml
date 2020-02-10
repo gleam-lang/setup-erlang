@@ -13,7 +13,7 @@ jobs:
       - name: Install Erlang/OTP
         uses: ./
         with:
-          otp-version: 22.1
+          otp-version: 22.2
       - name: Run erl
         run: |
           which erl
