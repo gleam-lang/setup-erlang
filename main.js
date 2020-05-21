@@ -2,14 +2,14 @@ const { exec } = require("@actions/exec");
 const core = require("@actions/core");
 const path = require("path");
 
-let scriptfile;
+let main;
 if (process.platform === "win32") {
-    scriptfile = "main.ps1";
+    let scriptfile = path.join(__dirname, "main.ps1")
+    main = "C:\\Program Files\\PowerShell\\7\\pwsh.EXE -command \". '${scriptfile}'\"";
 }
 else {
-    scriptfile = "main.sh";
+    main = path.join(__dirname, "main.sh")
 }
 
 const version = core.getInput("otp-version", { required: true });
-const main = path.join(__dirname, scriptfile);
 exec(main, [version]).catch(err => core.setFailed(err.message));
