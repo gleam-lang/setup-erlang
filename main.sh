@@ -5,6 +5,7 @@ set -eo pipefail
 VERSION=$1
 RELEASE=$(lsb_release -cs)
 DIR=$(mktemp -d)
+pushd $DIR
 FILE=esl-erlang_$VERSION-1~ubuntu~$RELEASE\_amd64.deb
 
 echo Installing required packages
@@ -17,7 +18,7 @@ echo Installing Erlang/OTP $VERSION
 sudo dpkg -i $FILE
 
 echo Cleaning up
-cd
+popd
 rm -r $DIR
 
 echo Done!
