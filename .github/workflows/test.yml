@@ -5,15 +5,20 @@ on:
     branches: master
   pull_request:
 
+strategy: 
+  matrix:
+    os: [ubuntu-latest, macos-latest, windows-latest]
+    otp-version: ["21.3", "22.3", "23.0"]
+
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: {{ $matrix.os }}
     steps:
       - uses: actions/checkout@v2.0.0
       - name: Install Erlang/OTP
         uses: ./
         with:
-          otp-version: 22.2
+          otp-version: {{ $matrix.otp-version }}
       - name: Run erl
         run: |
           which erl
