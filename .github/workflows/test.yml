@@ -22,3 +22,16 @@ jobs:
         run: |
           which rebar3
           rebar3 version
+  windows-test:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2.0.0
+      - name: Install Erlang/OTP
+        uses: ./
+        with:
+          otp-version: 22.2
+        id: install_erlang
+      - name: Run erl
+        run: |
+          $env:PATH = "${{ steps.install_erlang.outputs.erlpath }}\bin;$env:PATH"
+          & erl.exe -eval 'erlang:display({otp_release, erlang:system_info(otp_release)}), halt().' -noshell
