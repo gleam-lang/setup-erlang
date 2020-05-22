@@ -15,6 +15,7 @@ if (!(Test-Path variable:global:PSScriptRoot)) {
 
 # Temporary folder
 $dir = "$PSScriptRoot\$(([System.Guid]::NewGuid()).Guid)"
+mkdir $dir | Out-Null
 Push-Location $dir
 
 # Download erlang
