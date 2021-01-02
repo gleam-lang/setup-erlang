@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.0.0
-      - uses: gleam-lang/setup-erlang@v1.1.0
+      - uses: gleam-lang/setup-erlang@v1.1.2
         with:
           otp-version: 22.1
       - run: rebar3 eunit
@@ -38,7 +38,7 @@ jobs:
         otp: [22.1, 21.3]
     steps:
       - uses: actions/checkout@v2.0.0
-      - uses: gleam-lang/setup-erlang@v1.1.0
+      - uses: gleam-lang/setup-erlang@v1.1.2
         with:
           otp-version: ${{matrix.otp}}
       - run: rebar3 eunit
@@ -65,7 +65,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2.0.0
-      - uses: gleam-lang/setup-erlang@v1.1.0
+      - uses: gleam-lang/setup-erlang@v1.1.2
         with:
           otp-version: 22.1
       - run: rebar3 eunit
@@ -82,7 +82,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2.0.0
       - name: Install Erlang/OTP
-        uses: ./
+        uses: gleam-lang/setup-erlang@v1.1.2
         with:
           otp-version: 22.2
         id: install_erlang
