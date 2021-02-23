@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v2.0.0
       - uses: gleam-lang/setup-erlang@v1.1.2
         with:
-          otp-version: 22.1
+          otp-version: 23.2
       - run: rebar3 eunit
 ```
 
@@ -35,7 +35,7 @@ jobs:
     name: OTP ${{matrix.otp}}
     strategy:
       matrix:
-        otp: [22.1, 21.3]
+        otp: [23.1, 23.2]
     steps:
       - uses: actions/checkout@v2.0.0
       - uses: gleam-lang/setup-erlang@v1.1.2
@@ -67,7 +67,7 @@ jobs:
       - uses: actions/checkout@v2.0.0
       - uses: gleam-lang/setup-erlang@v1.1.2
         with:
-          otp-version: 22.1
+          otp-version: 23.2
       - run: rebar3 eunit
 ```
 
@@ -84,7 +84,7 @@ jobs:
       - name: Install Erlang/OTP
         uses: gleam-lang/setup-erlang@v1.1.2
         with:
-          otp-version: 22.2
+          otp-version: 23.2
         id: install_erlang
       - name: Run erl
         # Print the Erlang version
