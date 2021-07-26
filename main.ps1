@@ -23,7 +23,7 @@ Push-Location $dir
 
 # Download erlang
 "Downloading Erlang/OTP $otpVersion package"
-Invoke-WebRequest -Uri "https://packages.erlang-solutions.com/erlang/erlang/esl-erlang/FLAVOUR_1_general/esl-erlang_$otpVersion.0~windows_amd64.exe" -OutFile "esl-erlang_$otpVersion.0~windows_amd64.exe"
+Invoke-WebRequest -Uri "https://packages.erlang-solutions.com/erlang/erlang/esl-erlang/FLAVOUR_1_general/esl-erlang_$otpVersion~windows_amd64.exe" -OutFile "esl-erlang_$otpVersion~windows_amd64.exe"
 
 # Install erlang (runs in background)
 "Installing Erlang/OTP $otpVersion"
