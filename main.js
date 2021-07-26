@@ -11,5 +11,6 @@ else {
     main = path.join(__dirname, "main.sh")
 }
 
-const version = core.getInput("otp-version", { required: true });
-exec(main, [version]).catch(err => core.setFailed(err.message));
+const otp_version = core.getInput("otp-version", { required: true });
+const rebar3_version = core.getInput("rebar3-version", { required: false });
+exec(main, [otp_version, rebar3_version]).catch(err => core.setFailed(err.message));
