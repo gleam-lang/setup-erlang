@@ -30,7 +30,7 @@ jobs:
       - name: Install Erlang/OTP
         uses: ./
         with:
-          otp-version: "23.2"
+          otp-version: "23.0"
           rebar3-version: "3.16.1"
         id: install_erlang
       - name: Run erl
