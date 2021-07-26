@@ -57,7 +57,7 @@ if( $rebar3Version -eq 'true' )
 if ( $rebar3Version -neq '' )
 {
     "Downloading Rebar3 $rebar3Version"
-    Invoke-WebRequest -Uri "https://github.com/erlang/rebar3/releases/download/$rebar3Version/rebar3" -OutFile "rebar3"
+    Invoke-WebRequest -Uri "https://github.com/erlang/rebar3/releases/download/$rebar3Version/rebar3" -OutFile "rebar3.exe"
 
     # Wait for it..
     while (@(Get-Process | Where-Object { $_.name -match 'rebar3' }).length -gt 0) {
@@ -65,7 +65,7 @@ if ( $rebar3Version -neq '' )
     }
 
     New-Item -Path $env:ProgramFiles\Rebar3 -ItemType Directory
-    Move-Item rebar3 $env:ProgramFiles\Rebar3
+    Move-Item rebar3.exe $env:ProgramFiles\Rebar3
     $rebar3root = (Get-ChildItem -path $env:ProgramFiles\Rebar3 -directory).FullName
 
     "Rebar3 $rebar3Version installed in $rebar3root"

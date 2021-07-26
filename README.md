@@ -109,7 +109,7 @@ jobs:
       - uses: gleam-lang/setup-erlang@v1.1.2
         with:
           otp-version: "23.2"
-          rebar3-version: 3.16.1
+          rebar3-version: "3.16.1"
       - run: rebar3 version
 ```
 
