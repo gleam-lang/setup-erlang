@@ -1,7 +1,8 @@
 #! /usr/bin/pwsh
 param (
     [Parameter(Mandatory=$true, Position=0)]
-    [string]$otpVersion
+    [string]$otpVersion,
+
     [Parameter(Mandatory=$false, Position=1)]
     [string]$rebar3Version = ''
 )
