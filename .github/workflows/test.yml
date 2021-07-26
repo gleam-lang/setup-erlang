@@ -39,5 +39,5 @@ jobs:
           & erl.exe -eval 'erlang:display({otp_release, erlang:system_info(otp_release)}), halt().' -noshell
       - name: Run rebar3
         run: |
-          $env:PATH = "${{ steps.install_erlang.outputs.rerbar3path }}\bin;$env:PATH"
+          $env:PATH = "${{ steps.install_erlang.outputs.rebar3path }}\bin;$env:PATH"
           & rebar3.exe version
