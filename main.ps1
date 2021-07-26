@@ -27,7 +27,7 @@ Invoke-WebRequest -Uri "https://packages.erlang-solutions.com/erlang/erlang/esl-
 
 # Install erlang (runs in background)
 "Installing Erlang/OTP $otpVersion"
-& ".\esl-erlang_$otpVersion.0~windows_amd64.exe" '/S'
+& ".\esl-erlang_$otpVersion~windows_amd64.exe" '/S'
 
 # Wait for it..
 while (@(Get-Process | Where-Object { $_.name -match 'esl-erlang' }).length -gt 0) {
