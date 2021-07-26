@@ -55,7 +55,7 @@ if( $rebar3Version -eq 'true' )
     }
 }
 
-if ( $rebar3Version -neq '' )
+if ( $rebar3Version -ne '' )
 {
     "Downloading Rebar3 $rebar3Version"
     Invoke-WebRequest -Uri "https://github.com/erlang/rebar3/releases/download/$rebar3Version/rebar3" -OutFile "rebar3.exe"
