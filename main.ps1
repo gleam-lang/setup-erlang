@@ -65,9 +65,8 @@ if ( $rebar3Version -ne '' )
         Start-Sleep -Milliseconds 100
     }
 
-    New-Item -Path $env:ProgramFiles\Rebar3 -ItemType Directory
-    Move-Item rebar3.exe $env:ProgramFiles\Rebar3
-    $rebar3root = (Get-ChildItem -path $env:ProgramFiles\Rebar3 -directory).FullName
+    $rebar3root = (New-Item -Path $env:ProgramFiles\Rebar3 -ItemType Directory).FullName
+    Move-Item -Path rebar3.exe -Destination $rebar3root -Verbose
 
     "Rebar3 $rebar3Version installed in $rebar3root"
 
