@@ -8,6 +8,9 @@ inputs:
   otp-version:
     description: Version of OTP to install
     required: true
+  rebar3-version:
+    description: Version of Rebar3 to install
+    required: false
 runs:
   using: node12
   main: main.js
