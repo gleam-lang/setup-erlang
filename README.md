@@ -2,6 +2,13 @@
 
 [![](https://github.com/gleam-lang/setup-erlang/workflows/Test/badge.svg)](https://github.com/gleam-lang/setup-erlang/actions)
 
+## This project is deprecated
+
+Check out this excellent replacement: https://github.com/erlef/setup-beam/
+
+## Description
+
+
 A GitHub action that installs Erlang/OTP for use in your CI workflow.
 
 At present it supports Ubuntu Linux and Windows.
