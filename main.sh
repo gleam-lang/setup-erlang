@@ -13,7 +13,7 @@ echo Installing required packages
 sudo apt-get install -y libwxbase3.0-0v5 libwxgtk3.0-gtk3-0v5 libsctp1
 
 echo Downloading Erlang/OTP "$OTP_VERSION" package
-wget https://packages.erlang-solutions.com/erlang/debian/pool/"$FILE"
+wget -q https://packages.erlang-solutions.com/erlang/debian/pool/"$FILE"
 
 echo Installing Erlang/OTP "$OTP_VERSION"
 sudo dpkg -i "$FILE"
@@ -21,6 +21,8 @@ sudo dpkg -i "$FILE"
 if [ "$REBAR3_VERSION" == "true" ]
 then
     case "$OTP_VERSION" in
+        "26"*) REBAR3_VERSION="3.22.1" ;;
+        "25"*) REBAR3_VERSION="3.22.1" ;;
         "24"*) REBAR3_VERSION="3.16.1" ;;
         "23"*) REBAR3_VERSION="3.16.1" ;;
         "22"*) REBAR3_VERSION="3.16.1" ;;
@@ -30,7 +32,7 @@ then
         "18"*) REBAR3_VERSION="3.11.1" ;;
         "17"*) REBAR3_VERSION="3.10.0" ;;
         *)
-            echo Installing Rebar for OTP version "$OTP_VERSION" not supported
+            echo Installing Rebar3 for OTP version "$OTP_VERSION" not supported
             REBAR3_VERSION=""
             ;;
     esac
